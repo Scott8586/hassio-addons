@@ -1,7 +1,22 @@
 ARG BUILD_FROM
-FROM $BUILD_FROM
+FROM ${BUILD_FROM}
 
 ENV LANG C.UTF-8
+
+# Build arguments
+ARG BUILD_ARCH
+ARG BUILD_DATE
+ARG BUILD_REF
+ARG BUILD_VERSION
+
+# Labels
+LABEL \
+    io.hass.name="pentair-screenlogic" \
+    io.hass.description="home assistant pentair screenlogic add-on" \
+    io.hass.arch="${BUILD_ARCH}" \
+    io.hass.type="addon" \
+    io.hass.version=${BUILD_VERSION} \
+    maintainer="Scott8586"
 
 RUN apk add npm jq mosquitto-clients python3 && npm install node-screenlogic smart-buffer
 RUN pip3 install -r requirements.txt 
