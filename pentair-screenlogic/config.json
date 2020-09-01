@@ -3,7 +3,7 @@
   "version": "1.24a",
   "slug": "pentair_screenlogic",
   "description": "Pentair Screenlogic",
-  "url": "https://github.com/Scott8586/hassio-addons/tree/python_feeder/pentair-screenlogic",
+  "url": "https://github.com/Scott8586/hassio-addons/pentair-screenlogic",
   "arch": ["armhf", "armv7", "aarch64", "amd64", "i386"],
   "startup": "before",
   "boot": "auto",
