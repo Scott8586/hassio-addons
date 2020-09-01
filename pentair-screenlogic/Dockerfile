@@ -3,9 +3,11 @@ FROM $BUILD_FROM
 
 ENV LANG C.UTF-8
 
-RUN apk add npm jq mosquitto-clients && npm install node-screenlogic smart-buffer
+RUN apk add npm jq mosquitto-clients python3 pip3 && npm install node-screenlogic smart-buffer
+RUN pip3 install -r requirements.txt 
 
 COPY run.sh /
+COPY mosquitto_feeder.py /
 COPY set_circuit /node_modules/node-screenlogic/
 COPY set_salt /node_modules/node-screenlogic/
 COPY set_temp /node_modules/node-screenlogic/

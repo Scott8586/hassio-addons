@@ -1,5 +1,5 @@
 {
   "name": "Pentair Screenlogic",
-  "url": "https://github.com/Scott8586/hassio-addons/tree/master/pentair-screenlogic",
-  "maintainer": "Brian Woodworth <bwoodworth@gmail.com>"
+  "url": "https://github.com/Scott8586/hassio-addons/tree/python_feeder/pentair-screenlogic",
+  "maintainer": "Scott Presnell <srp@tworoads.net>"
 }
