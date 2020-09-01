@@ -23,6 +23,7 @@ def main(argv):
 
   time.sleep(2)
   client.loop_stop()
+  client.disconnect()
 
 if __name__ == "__main__":
     main(sys.argv)
