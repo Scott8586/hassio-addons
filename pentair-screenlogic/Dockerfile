@@ -19,7 +19,9 @@ LABEL \
     maintainer="Scott8586"
 
 RUN apk add npm jq mosquitto-clients python3 && npm install node-screenlogic smart-buffer
-RUN pip3 install -r requirements.txt 
+
+COPY requirements.txt /
+RUN pip3 install -r /requirements.txt 
 
 COPY run.sh /
 COPY mosquitto_feeder.py /
@@ -32,6 +34,7 @@ COPY send_state_to_ha.js /node_modules/node-screenlogic/
 COPY initialize.js /node_modules/node-screenlogic/
 
 RUN chmod a+x /node_modules/node-screenlogic/*
+RUN chmod a+x /mosquitto_feeder.py
 RUN chmod a+x /run.sh
 
 CMD [ "/run.sh" ]
