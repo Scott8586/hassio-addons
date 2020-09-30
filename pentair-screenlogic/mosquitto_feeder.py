@@ -33,7 +33,9 @@ def main(argv):
     line.rstrip()
     m = re.match('(.*),(.*)', line)
     if m:
-      client.publish(m.group(1), payload=m.group(2))
+      msg_info = client.publish(m.group(1), payload=m.group(2))
+      if msg_info.is_published() == False:
+        msg_info.wait_for_publish()
 
   time.sleep(2)
   client.loop_stop()
